@@ -29,23 +29,23 @@ export default async function Page({ params: { slug } }: Props) {
 
   return (
     <MDXRemote
-      options={{
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
-          rehypePlugins: [
-            [
-              rehypeShikiFromHighlighter as any,
-              highlighter,
-              {
-                themes: {
-                  light: "github-dark",
-                  dark: "github-dark",
-                },
-              },
-            ],
-          ],
-        },
-      }}
+      // options={{
+      //   mdxOptions: {
+      //     remarkPlugins: [remarkGfm],
+      //     rehypePlugins: [
+      //       [
+      //         rehypeShikiFromHighlighter as any,
+      //         highlighter,
+      //         {
+      //           themes: {
+      //             light: "github-dark",
+      //             dark: "github-dark",
+      //           },
+      //         },
+      //       ],
+      //     ],
+      //   },
+      // }}
       source={content}
     />
   );
