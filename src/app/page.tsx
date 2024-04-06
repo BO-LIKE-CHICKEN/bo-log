@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -7,8 +6,8 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <h1>
-          Between 'bbo-log' and 'bo-log', where diligent records lay the
-          groundwork for moments of unexpected success.
+          {`Between 'bbo-log' and 'bo-log', where diligent records lay the
+          groundwork for moments of unexpected success.`}
         </h1>
       </div>
       <div>
