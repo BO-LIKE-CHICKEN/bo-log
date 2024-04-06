@@ -100,6 +100,17 @@ a {
   text-decoration: none;
 }
 
+pre {
+  padding: 20px;
+}
+
+pre.shiki {
+  .line {
+    line-height: 20px;
+  }
+  /* 추가적인 스타일링 */
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
