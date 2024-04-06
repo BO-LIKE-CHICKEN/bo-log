@@ -4,6 +4,7 @@ import { getHighlighter } from "shiki";
 import rehypeShikiFromHighlighter from "@shikijs/rehype/core";
 import { readFile } from "fs/promises";
 import remarkGfm from "remark-gfm";
+import { join } from "path";
 
 type Props = {
   params: { slug: string };
@@ -18,7 +19,9 @@ export async function generateMetadata({ params: { slug } }: Props) {
 }
 
 export default async function Page({ params: { slug } }: Props) {
-  const postFile = await readFile(`_posts/${slug}.mdx`, "utf-8");
+  const filePath = join(process.cwd(), "_posts", `${slug}.mdx`);
+
+  const postFile = await readFile(filePath, "utf-8");
 
   const { content } = matter(postFile);
 
@@ -29,23 +32,23 @@ export default async function Page({ params: { slug } }: Props) {
 
   return (
     <MDXRemote
-      // options={{
-      //   mdxOptions: {
-      //     remarkPlugins: [remarkGfm],
-      //     rehypePlugins: [
-      //       [
-      //         rehypeShikiFromHighlighter as any,
-      //         highlighter,
-      //         {
-      //           themes: {
-      //             light: "github-dark",
-      //             dark: "github-dark",
-      //           },
-      //         },
-      //       ],
-      //     ],
-      //   },
-      // }}
+      options={{
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [
+            [
+              rehypeShikiFromHighlighter as any,
+              highlighter,
+              {
+                themes: {
+                  light: "github-dark",
+                  dark: "github-dark",
+                },
+              },
+            ],
+          ],
+        },
+      }}
       source={content}
     />
   );
