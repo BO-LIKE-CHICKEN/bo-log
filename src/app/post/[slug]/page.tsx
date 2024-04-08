@@ -4,6 +4,7 @@ import { getHighlighter } from 'shiki';
 import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
 import { readFile } from 'fs/promises';
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
 import { join } from 'path';
 
 type Props = {
@@ -23,7 +24,7 @@ export default async function Page({ params: { slug } }: Props) {
 
   const postFile = await readFile(filePath, 'utf-8');
 
-  const { content } = matter(postFile);
+  const { content, data: metaData } = matter(postFile);
 
   const highlighter = await getHighlighter({
     themes: ['github-dark'],
@@ -31,26 +32,32 @@ export default async function Page({ params: { slug } }: Props) {
   });
 
   return (
-    <MDXRemote
-      options={{
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
-          rehypePlugins: [
-            [
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              rehypeShikiFromHighlighter as any,
-              highlighter,
-              {
-                themes: {
-                  light: 'github-dark',
-                  dark: 'github-dark',
+    <article>
+      <h1>{metaData.title}</h1>
+      <p>{metaData.description}</p>
+      <p>작성일 {metaData.date}</p>
+      <MDXRemote
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [
+              rehypeSlug,
+              [
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                rehypeShikiFromHighlighter as any,
+                highlighter,
+                {
+                  themes: {
+                    light: 'github-dark',
+                    dark: 'github-dark',
+                  },
                 },
-              },
+              ],
             ],
-          ],
-        },
-      }}
-      source={content}
-    />
+          },
+        }}
+        source={content}
+      />
+    </article>
   );
 }
