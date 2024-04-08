@@ -47,7 +47,6 @@ globalStyle('html, body', {
 globalStyle('a', {
   fontSize: '1em',
   lineHeight: 1.2,
-  color: 'inherit',
   textDecoration: 'none',
   marginBottom: '1.5em',
   color: globalColors.colors.blueGreyLighten2,
