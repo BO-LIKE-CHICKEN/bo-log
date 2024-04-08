@@ -6,7 +6,7 @@ import { readFile } from 'fs/promises';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { join } from 'path';
-import { anchorStyle, articleStyle, headingStyle, paragraphStyle } from './styles.css';
+import { anchorStyle, articleStyle, headingStyle, listItemStyle, paragraphStyle } from './styles.css';
 
 type Props = {
   params: { slug: string };
@@ -62,6 +62,7 @@ export default async function Page({ params: { slug } }: Props) {
           h2: (props) => <h2 className={headingStyle} {...props} />,
           p: (props) => <p className={paragraphStyle} {...props} />,
           a: (props) => <a className={anchorStyle} {...props} />,
+          li: (props) => <li className={listItemStyle} {...props} />,
         }}
       />
     </article>

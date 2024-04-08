@@ -25,3 +25,7 @@ export const paragraphStyle = style({
 export const anchorStyle = style({
   color: globalColors.colors.blueGreyLighten2,
 });
+
+export const listItemStyle = style({
+  color: globalColors.colors.blueGreyLighten4,
+});

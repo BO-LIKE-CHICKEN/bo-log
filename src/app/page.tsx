@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main>
+      <div>
         <h1>
           {`Between 'bbo-log' and 'bo-log', where diligent records lay the
           groundwork for moments of unexpected success.`}

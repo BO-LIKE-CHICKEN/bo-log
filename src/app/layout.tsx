@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import { pretendard } from '@/styles/fonts';
 import { globalColors } from '@/styles/styles.css';
 
