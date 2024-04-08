@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+echo "커밋 전 lint 검사 중..."
+pnpm exec lint-staged
+
