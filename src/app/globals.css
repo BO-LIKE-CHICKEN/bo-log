@@ -36,6 +36,7 @@ a {
   line-height: 1.2;
   color: inherit;
   text-decoration: none;
+  margin-bottom: 1.5em;
 }
 
 h1 {
@@ -51,7 +52,7 @@ h5,
 h6 {
   line-height: 1.2;
   font-size: 1.5em;
-  margin: 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 p {
@@ -61,6 +62,7 @@ p {
 }
 
 pre {
+  border-radius: 0.5em;
   padding: 1.5em;
 }
 
@@ -69,6 +71,10 @@ pre.shiki {
     line-height: 20px;
   }
   /* 추가적인 스타일링 */
+}
+
+li {
+  list-style-position: inside;
 }
 
 @media (prefers-color-scheme: dark) {

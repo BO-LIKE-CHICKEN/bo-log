@@ -6,6 +6,7 @@ import { readFile } from 'fs/promises';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { join } from 'path';
+import { anchorStyle, articleStyle, headingStyle, paragraphStyle } from './styles.css';
 
 type Props = {
   params: { slug: string };
@@ -32,10 +33,10 @@ export default async function Page({ params: { slug } }: Props) {
   });
 
   return (
-    <article>
-      <h1>{metaData.title}</h1>
-      <p>{metaData.description}</p>
-      <p>작성일 {metaData.date}</p>
+    <article className={articleStyle}>
+      <h1 className={headingStyle}>{metaData.title}</h1>
+      <p className={paragraphStyle}>{metaData.description}</p>
+      <p className={paragraphStyle}>작성일 {metaData.date}</p>
       <MDXRemote
         options={{
           mdxOptions: {
@@ -57,6 +58,11 @@ export default async function Page({ params: { slug } }: Props) {
           },
         }}
         source={content}
+        components={{
+          h2: (props) => <h2 className={headingStyle} {...props} />,
+          p: (props) => <p className={paragraphStyle} {...props} />,
+          a: (props) => <a className={anchorStyle} {...props} />,
+        }}
       />
     </article>
   );
