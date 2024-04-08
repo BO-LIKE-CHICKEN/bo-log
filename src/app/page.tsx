@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { containerStyle } from './styles.css';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
+    <section className={containerStyle}>
       <div>
         <h1>
           {`Between 'bbo-log' and 'bo-log', where diligent records lay the
@@ -10,8 +11,8 @@ export default function Home() {
         </h1>
       </div>
       <div>
-        <Link href="/post/development-habits">링크: 마크다운 스타일 테스트 페이지</Link>
+        <Link href="/posts">목록으로 가기</Link>
       </div>
-    </main>
+    </section>
   );
 }

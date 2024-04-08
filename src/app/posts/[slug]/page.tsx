@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { slug } }: Props) {
   return metadata;
 }
 
-export default async function Page({ params: { slug } }: Props) {
+export default async function PostDetailPage({ params: { slug } }: Props) {
   const filePath = join(process.cwd(), '_posts', `${slug}.mdx`);
 
   const postFile = await readFile(filePath, 'utf-8');
