@@ -74,10 +74,8 @@ globalStyle('pre', {
   padding: '1.5em',
 });
 
-// For nested selectors like pre.shiki .line, you need to use global selectors
 globalStyle('pre.shiki .line', {
   lineHeight: '22px',
-  // ...additional styling
 });
 
 globalStyle('li', {
