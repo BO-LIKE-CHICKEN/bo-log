@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
-import Link from "next/link";
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
@@ -11,9 +11,7 @@ export default function Home() {
         </h1>
       </div>
       <div>
-        <Link href="/post/development-habits">
-          링크: 마크다운 스타일 테스트 페이지
-        </Link>
+        <Link href="/post/development-habits">링크: 마크다운 스타일 테스트 페이지</Link>
       </div>
     </main>
   );

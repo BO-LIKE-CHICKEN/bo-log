@@ -1,10 +1,10 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import matter from "gray-matter";
-import { getHighlighter } from "shiki";
-import rehypeShikiFromHighlighter from "@shikijs/rehype/core";
-import { readFile } from "fs/promises";
-import remarkGfm from "remark-gfm";
-import { join } from "path";
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import matter from 'gray-matter';
+import { getHighlighter } from 'shiki';
+import rehypeShikiFromHighlighter from '@shikijs/rehype/core';
+import { readFile } from 'fs/promises';
+import remarkGfm from 'remark-gfm';
+import { join } from 'path';
 
 type Props = {
   params: { slug: string };
@@ -19,15 +19,15 @@ export async function generateMetadata({ params: { slug } }: Props) {
 }
 
 export default async function Page({ params: { slug } }: Props) {
-  const filePath = join(process.cwd(), "_posts", `${slug}.mdx`);
+  const filePath = join(process.cwd(), '_posts', `${slug}.mdx`);
 
-  const postFile = await readFile(filePath, "utf-8");
+  const postFile = await readFile(filePath, 'utf-8');
 
   const { content } = matter(postFile);
 
   const highlighter = await getHighlighter({
-    themes: ["github-dark"],
-    langs: ["typescript"],
+    themes: ['github-dark'],
+    langs: ['typescript'],
   });
 
   return (
@@ -37,12 +37,13 @@ export default async function Page({ params: { slug } }: Props) {
           remarkPlugins: [remarkGfm],
           rehypePlugins: [
             [
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               rehypeShikiFromHighlighter as any,
               highlighter,
               {
                 themes: {
-                  light: "github-dark",
-                  dark: "github-dark",
+                  light: 'github-dark',
+                  dark: 'github-dark',
                 },
               },
             ],
