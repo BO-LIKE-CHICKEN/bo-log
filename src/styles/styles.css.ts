@@ -46,31 +46,46 @@ globalStyle('html, body', {
 
 globalStyle('a', {
   fontSize: '1em',
-  lineHeight: 1.2,
+  lineHeight: 1.4,
   textDecoration: 'none',
   marginBottom: '1.5em',
   color: globalColors.colors.blueGreyLighten2,
 });
 
 globalStyle('h1', {
-  lineHeight: 1.2,
+  lineHeight: 1.4,
   fontSize: '2.25em',
   marginBottom: '0.8888889em',
   color: globalColors.colors.blueGreyLighten5,
 });
 
-globalStyle('h2, h3, h4, h5, h6', {
-  lineHeight: 1.2,
+globalStyle('h2', {
+  lineHeight: 1.4,
   fontSize: '1.5em',
-  margin: '1em 0',
+  margin: '1.7em 0 1.0em 0',
+  color: globalColors.colors.blueGreyLighten5,
+});
+
+globalStyle('h3', {
+  lineHeight: 1.4,
+  margin: '0.8em 0 0.5em 0',
+  fontSize: '1.25em',
+  color: globalColors.colors.blueGreyLighten5,
+});
+
+globalStyle('h4', {
+  lineHeight: 1.4,
+  margin: '0.6em 0 0.35em 0',
+  fontSize: '1.0em',
   color: globalColors.colors.blueGreyLighten5,
 });
 
 globalStyle('p', {
-  lineHeight: 1.2,
+  lineHeight: 1.4,
   fontSize: '1rem',
   margin: '1.5em 0',
   color: globalColors.colors.blueGreyLighten4,
+  wordBreak: 'break-word',
 });
 
 globalStyle('pre', {
@@ -93,11 +108,12 @@ globalStyle('li', {
 });
 
 globalStyle('code', {
-  lineHeight: 'normal',
-  background: 'rgba(135, 131, 120, 0.15)',
-  color: '#EB5757',
-  padding: '0.05em 0.5em',
-  borderRadius: '0.5em',
+  background: globalColors.colors.blueGreyLighten3,
+  color: globalColors.colors.blueGreyDarken2,
+  fontWeight: 700,
+  padding: '0.05em 0.2em',
+  borderRadius: '0.25em',
+  margin: '0 0.1em',
 });
 
 globalStyle('pre.shiki code', {

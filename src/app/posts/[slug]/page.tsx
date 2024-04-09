@@ -60,6 +60,8 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         source={content}
         components={{
           h2: (props) => <h2 className={headingStyle} {...props} />,
+          h3: (props) => <h3 className={headingStyle} {...props} />,
+          h4: (props) => <h4 className={headingStyle} {...props} />,
           p: (props) => <p className={paragraphStyle} {...props} />,
           a: (props) => <a className={anchorStyle} {...props} />,
           li: (props) => <li className={listItemStyle} {...props} />,
