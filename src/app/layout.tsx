@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pretendard } from '@/styles/fonts';
 import { globalColors } from '@/styles/styles.css';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'bo-log',
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${pretendard.className} ${globalColors}`}>
       <body>
-        <main>{children}</main>
+        <main>
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

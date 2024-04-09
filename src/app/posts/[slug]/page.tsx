@@ -6,7 +6,17 @@ import { readFile } from 'fs/promises';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { join } from 'path';
-import { anchorStyle, articleStyle, headingStyle, listItemStyle, paragraphStyle } from './styles.css';
+import {
+  anchorStyle,
+  articleStyle,
+  heading1Style,
+  heading2Style,
+  heading3Style,
+  heading4Style,
+  headingStyle,
+  listItemStyle,
+  paragraphStyle,
+} from './styles.css';
 
 type Props = {
   params: { slug: string };
@@ -34,7 +44,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
 
   return (
     <article className={articleStyle}>
-      <h1 className={headingStyle}>{metaData.title}</h1>
+      <h1 className={`${headingStyle} ${heading1Style}`}>{metaData.title}</h1>
       <p className={paragraphStyle}>{metaData.description}</p>
       <p className={paragraphStyle}>작성일 {metaData.date}</p>
       <MDXRemote
@@ -59,9 +69,9 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         }}
         source={content}
         components={{
-          h2: (props) => <h2 className={headingStyle} {...props} />,
-          h3: (props) => <h3 className={headingStyle} {...props} />,
-          h4: (props) => <h4 className={headingStyle} {...props} />,
+          h2: (props) => <h2 className={`${headingStyle} ${heading2Style}`} {...props} />,
+          h3: (props) => <h3 className={`${headingStyle} ${heading3Style}`} {...props} />,
+          h4: (props) => <h4 className={`${headingStyle} ${heading4Style}`} {...props} />,
           p: (props) => <p className={paragraphStyle} {...props} />,
           a: (props) => <a className={anchorStyle} {...props} />,
           li: (props) => <li className={listItemStyle} {...props} />,
