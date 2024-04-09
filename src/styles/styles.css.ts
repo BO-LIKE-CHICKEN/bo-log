@@ -117,6 +117,7 @@ globalStyle('code', {
 });
 
 globalStyle('pre.shiki code', {
+  fontWeight: 'inherit',
   color: 'inherit',
   background: 'inherit',
 });
