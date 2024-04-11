@@ -41,11 +41,14 @@ globalStyle('*', {
 
 globalStyle('html, body', {
   maxWidth: '100vw',
+  height: '100vh',
+  minHeight: '100vh',
   overflowX: 'hidden',
   backgroundColor: globalColors.colors.blueGreyDarken1,
 });
 
 globalStyle('main', {
+  height: '100%',
   paddingTop: 64,
 });
 
