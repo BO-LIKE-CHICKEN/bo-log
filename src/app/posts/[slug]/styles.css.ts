@@ -8,7 +8,7 @@ export const containerStyle = style({
 });
 
 export const articleStyle = style({
-  width: 708,
+  width: 768,
 });
 
 export const headingStyle = style({

@@ -2,8 +2,9 @@ import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
 
 export const globalColors = createGlobalTheme(':root', {
   colors: {
+    blueGreyDarken0: '#1e2a30',
+    blueGreyDarken0Opacity: '#1e2a30E6',
     blueGreyDarken1: '#263238',
-    blueGreyDarken1Opacity: '#263238E6',
     blueGreyDarken2: '#37474F',
     blueGreyDarken3: '#455a64',
     blueGreyDarken4: '#546e7a',
@@ -44,7 +45,7 @@ globalStyle('html, body', {
   height: '100vh',
   minHeight: '100vh',
   overflowX: 'hidden',
-  backgroundColor: globalColors.colors.blueGreyDarken1,
+  backgroundColor: globalColors.colors.blueGreyDarken0,
 });
 
 globalStyle('main', {

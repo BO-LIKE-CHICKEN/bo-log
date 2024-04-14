@@ -8,7 +8,7 @@ export const containerStyle = style({
 });
 
 export const innerContainerStyle = style({
-  width: 708,
+  width: 768,
 });
 
 export const splineContainerStyle = style({

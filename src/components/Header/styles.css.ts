@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css';
 import { globalColors } from '@/styles/styles.css';
 
-export const containerStyle = style({
+export const headerStyle = style({
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
   position: 'fixed',
@@ -12,8 +12,16 @@ export const containerStyle = style({
   top: 0,
   height: 64,
   borderBottom: `1px solid ${globalColors.colors.blueGrey}`,
-  backgroundColor: globalColors.colors.blueGreyDarken1Opacity,
+  backgroundColor: globalColors.colors.blueGreyDarken0Opacity,
   padding: '0 40px',
+});
+
+export const containerStyle = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: 768,
+  height: 64,
 });
 
 export const logoStyle = style({
